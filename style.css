@@ -1,0 +1,14 @@
+body {
+  background: #fce4ec;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+h1 {
+  color: #d81b60;
+}
+#gameCanvas {
+  background: #fff8e1;
+  border: 2px solid #d81b60;
+  margin-top: 20px;
+  box-shadow: 0 0 20px #d81b6044;
+}
