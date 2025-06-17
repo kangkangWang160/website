@@ -5,6 +5,7 @@ const menuScreen = document.getElementById('menuScreen');
 const playPong = document.getElementById('playPong');
 const pongGameOver = document.getElementById('pongGameOver');
 const pongRestartBtn = document.getElementById('pongRestartBtn');
+const pongReturnBtn = document.getElementById('pongReturnBtn');
 const difficultyBtns = document.querySelectorAll('.difficultyBtn');
 
 let selectedDifficulty = 'normal';
@@ -121,6 +122,13 @@ document.addEventListener('keyup', e => {
 });
 pongRestartBtn.addEventListener('click', () => {
   startPong();
+});
+pongReturnBtn.addEventListener('click', () => {
+  // Return to menu
+  menuScreen.style.display = 'block';
+  canvas.style.display = 'none';
+  pongGameOver.style.display = 'none';
+  currentGame = null;
 });
 // Instructions modal logic
 const instructionsBtn = document.getElementById('instructionsBtn');

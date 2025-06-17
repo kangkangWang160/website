@@ -74,8 +74,9 @@ body {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   z-index: 2;
 }
-#pongRestartBtn {
+#pongRestartBtn, #pongReturnBtn {
   margin-top: 16px;
+  margin-right: 8px;
   padding: 10px 24px;
   font-size: 1em;
   border: none;
@@ -85,7 +86,7 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
-#pongRestartBtn:hover {
+#pongRestartBtn:hover, #pongReturnBtn:hover {
   background: #66ccff;
 }
 .pretty-title {
@@ -133,16 +134,19 @@ body {
   color: #ff6666;
 }
 #instructionsBtn {
-  margin-bottom: 18px;
+  margin-bottom: 8px;
+  margin-top: -10px;
   padding: 10px 24px;
   font-size: 1em;
   border: none;
   border-radius: 8px;
-  background: #b3e6ff;
-  color: #444;
+  background: #ff9800;
+  color: #fff;
   cursor: pointer;
   transition: background 0.2s;
+  position: relative;
+  top: -10px;
 }
 #instructionsBtn:hover {
-  background: #66ccff;
+  background: #ffb74d;
 }
