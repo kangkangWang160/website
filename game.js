@@ -11,12 +11,14 @@ const bestScoreDiv = document.getElementById('bestScore');
 const extraEasyMsg = document.getElementById('extraEasyMsg');
 const extraEasyContinueBtn = document.getElementById('extraEasyContinueBtn');
 const extraEasyEndBtn = document.getElementById('extraEasyEndBtn');
+const ballCountDiv = document.getElementById('ballCount');
 
 let selectedDifficulty = 'normal';
 let pong, currentGame = null;
 let ballSpeed = 3;
 let bestScore = localStorage.getItem('pongBestScore') ? parseInt(localStorage.getItem('pongBestScore')) : 0;
 let isExtraEasy = false;
+let ballCount = 1;
 
 difficultyBtns.forEach(btn => {
   btn.onclick = () => {
@@ -46,6 +48,7 @@ function startPong() {
   };
   pongGameOver.style.display = 'none';
   extraEasyMsg.style.display = 'none';
+  ballCount = 1;
   requestAnimationFrame(pongLoop);
 }
 function drawPong() {
@@ -116,6 +119,7 @@ function updatePong() {
         localStorage.setItem('pongBestScore', bestScore);
       }
       bestScoreDiv.textContent = `Best High Score: ${bestScore}`;
+      ballCountDiv.textContent = `Balls used: 1`;
       pongGameOver.style.display = 'block';
     }
   }
@@ -156,17 +160,21 @@ extraEasyContinueBtn.addEventListener('click', () => {
   pong.ball.dy = (selectedDifficulty === 'extraeasy' ? -3.5 : -ballSpeed);
   pong.running = true;
   extraEasyMsg.style.display = 'none';
+  ballCount++;
   requestAnimationFrame(pongLoop);
 });
+
 extraEasyEndBtn.addEventListener('click', () => {
   if (pong.score > bestScore) {
     bestScore = pong.score;
     localStorage.setItem('pongBestScore', bestScore);
   }
   bestScoreDiv.textContent = `Best High Score: ${bestScore}`;
+  ballCountDiv.textContent = `Balls used: ${ballCount}`;
   extraEasyMsg.style.display = 'none';
   pongGameOver.style.display = 'block';
 });
+
 // Instructions modal logic
 const instructionsBtn = document.getElementById('instructionsBtn');
 const instructionsModal = document.getElementById('instructionsModal');
