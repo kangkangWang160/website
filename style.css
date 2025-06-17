@@ -43,8 +43,42 @@ body {
   cursor: pointer;
   transition: background 0.2s;
 }
-.difficultyBtn.selected, .difficultyBtn:hover {
+.difficultyBtn.selected {
+  background: #3399cc !important;
+  color: #fff;
+}
+.difficultyBtn:hover {
   background: #66ccff;
+}
+.difficultyBtn[data-speed="extraeasy"] {
+  background: #7ed957;
+  color: #fff;
+}
+.difficultyBtn[data-speed="extraeasy"].selected {
+  background: #43a047 !important;
+}
+.difficultyBtn[data-speed="extraeasy"]:hover {
+  background: #43a047;
+}
+.difficultyBtn[data-speed="hard"] {
+  background: #ffb3b3;
+  color: #fff;
+}
+.difficultyBtn[data-speed="hard"].selected {
+  background: #e53935 !important;
+}
+.difficultyBtn[data-speed="hard"]:hover {
+  background: #e57373;
+}
+.difficultyBtn[data-speed="extrahard"] {
+  background: #8e44ad;
+  color: #fff;
+}
+.difficultyBtn[data-speed="extrahard"].selected {
+  background: #6c3483 !important;
+}
+.difficultyBtn[data-speed="extrahard"]:hover {
+  background: #a569bd;
 }
 #extraEasyMsg {
   position: absolute;
@@ -196,4 +230,112 @@ body {
 }
 #instructionsBtn:hover {
   background: #ffb74d;
+}
+#normalBallCounter {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.1em;
+  color: #3399cc;
+  background: #fff;
+  padding: 6px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 4;
+}
+#normalBallMsg {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  z-index: 5;
+  padding: 30px 0 20px 0;
+}
+#normalBallMsg .normal-ball-text {
+  font-size: 1.25em;
+  color: #3399cc;
+  margin: 18px 0 10px 0;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+#normalBallMsg button {
+  margin: 10px 12px 0 12px;
+  padding: 10px 24px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background: #3399cc;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#normalBallMsg button:hover {
+  background: #1976d2;
+}
+#extraHardOptions {
+  margin-top: 10px;
+  text-align: center;
+}
+.extraHardOptionBtn {
+  margin: 8px 6px 0 6px;
+  padding: 6px 12px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 8px;
+  background: #8e44ad;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.extraHardOptionBtn.selected, .extraHardOptionBtn:hover {
+  background: #6c3483;
+}
+.extraHardOptionBtn[data-option="restore"] {
+  background: #43a047;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 5px 14px;
+}
+.extraHardOptionBtn[data-option="restore"].selected,
+.extraHardOptionBtn[data-option="restore"]:hover {
+  background: #2e7d32;
+}
+.extraHardOptionBtn[data-option="norestore"] {
+  background: #e53935;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 5px 14px;
+}
+.extraHardOptionBtn[data-option="norestore"].selected,
+.extraHardOptionBtn[data-option="norestore"]:hover {
+  background: #b71c1c;
+}
+#extraHardHealthBar {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 180px;
+  height: 24px;
+  background: #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 4;
+}
+#extraHardHealth {
+  height: 100%;
+  width: 100%;
+  background: #e53935;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 24px;
+  color: #fff;
+  font-weight: bold;
+  transition: width 0.3s;
 }

@@ -17,12 +17,13 @@
           <span class="close" id="closeInstructions">&times;</span>
           <h2>How to Play</h2>
           <ul>
-            <li>Choose a difficulty: Extra Easy, Normal, or Hard.</li>
+            <li>Choose a difficulty: Extra Easy, Normal, Hard, or Extra Hard.</li>
             <li>Click "Play Ping Pong" to start the game.</li>
             <li>Move your paddle with your mouse or the left/right arrow keys.</li>
-            <li>Keep the ball in play by bouncing it off your paddle.</li>
+            <li>Keep the ball(s) in play by bouncing them off your paddle.</li>
             <li>Try to score as many points as possible!</li>
-            <li>The game ends if the ball passes your paddle or the AI's paddle (except in Extra Easy mode).</li>
+            <li>In Extra Hard mode, 3 balls are in play at once. Choose between Health Restore (gain health for saves) or No Restore (no health gain).</li>
+            <li>The game ends if health reaches 0 or all balls are lost.</li>
           </ul>
         </div>
       </div>
@@ -31,9 +32,19 @@
         <button class="difficultyBtn" data-speed="extraeasy">Extra Easy</button>
         <button class="difficultyBtn" data-speed="normal">Normal</button>
         <button class="difficultyBtn" data-speed="hard">Hard</button>
+        <button class="difficultyBtn" data-speed="extrahard">Extra Hard</button>
+      </div>
+      <div id="extraHardOptions" style="display:none;margin-top:10px;">
+        <label style="font-size:1em;">Extra Hard Mode Options:</label><br>
+        <button class="extraHardOptionBtn" data-option="restore">Health Restore</button>
+        <button class="extraHardOptionBtn" data-option="norestore">No Restore</button>
       </div>
       <button id="playPong" style="display:none;">Play Ping Pong</button>
     </div>
+    <div id="extraHardHealthBar" style="display:none;position:absolute;top:10px;left:20px;width:180px;height:24px;background:#eee;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);z-index:4;">
+      <div id="extraHardHealth" style="height:100%;width:100%;background:#e53935;border-radius:12px;text-align:center;line-height:24px;color:#fff;font-weight:bold;transition:width 0.3s;"></div>
+    </div>
+    <div id="normalBallCounter" style="display:none;position:absolute;top:10px;right:20px;font-size:1.1em;color:#3399cc;background:#fff;padding:6px 16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);z-index:4;">Balls left: 3</div>
     <canvas id="gameCanvas" width="400" height="600" style="display:none;"></canvas>
     <div id="pongGameOver" style="display:none;">
       Game Over!<br>
@@ -46,6 +57,11 @@
       <div style="font-size:1.1em;color:#e67e22;margin:18px 0 10px 0;">Did you accidentally drop your ball? Here is another one.~ &lt;3</div>
       <button id="extraEasyContinueBtn">Continue</button>
       <button id="extraEasyEndBtn">End Game</button>
+    </div>
+    <div id="normalBallMsg" style="display:none;">
+      <div class="normal-ball-text" style="font-size:1.2em;line-height:1.4em;">You dropped a ball!<br>Use another or end the game?</div>
+      <button id="normalBallContinueBtn">Use Another Ball</button>
+      <button id="normalBallEndBtn">End Game</button>
     </div>
   </div>
   <script src="game.js"></script>
