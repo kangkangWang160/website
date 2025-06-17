@@ -17,17 +17,18 @@
           <span class="close" id="closeInstructions">&times;</span>
           <h2>How to Play</h2>
           <ul>
-            <li>Choose a difficulty: Normal or Hard.</li>
+            <li>Choose a difficulty: Extra Easy, Normal, or Hard.</li>
             <li>Click "Play Ping Pong" to start the game.</li>
             <li>Move your paddle with your mouse or the left/right arrow keys.</li>
             <li>Keep the ball in play by bouncing it off your paddle.</li>
             <li>Try to score as many points as possible!</li>
-            <li>The game ends if the ball passes your paddle or the AI's paddle.</li>
+            <li>The game ends if the ball passes your paddle or the AI's paddle (except in Extra Easy mode).</li>
           </ul>
         </div>
       </div>
       <div id="difficultySelect">
         <label>Choose Difficulty:</label><br>
+        <button class="difficultyBtn" data-speed="extraeasy">Extra Easy</button>
         <button class="difficultyBtn" data-speed="normal">Normal</button>
         <button class="difficultyBtn" data-speed="hard">Hard</button>
       </div>
@@ -36,8 +37,14 @@
     <canvas id="gameCanvas" width="400" height="600" style="display:none;"></canvas>
     <div id="pongGameOver" style="display:none;">
       Game Over!<br>
+      <div id="bestScore" style="font-size:1em;margin:10px 0 0 0;color:#8e44ad;"></div>
       <button id="pongRestartBtn">Restart</button>
       <button id="pongReturnBtn">Return</button>
+    </div>
+    <div id="extraEasyMsg" style="display:none;">
+      <div style="font-size:1.1em;color:#e67e22;margin:18px 0 10px 0;">Did you accidentally drop your ball? Here is another one.~ &lt;3</div>
+      <button id="extraEasyContinueBtn">Continue</button>
+      <button id="extraEasyEndBtn">End Game</button>
     </div>
   </div>
   <script src="game.js"></script>
