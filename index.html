@@ -3,14 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flappy Kitten</title>
+  <title>Ping Pong Simulator</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Flappy Kitten</h1>
-  <canvas id="gameCanvas" width="400" height="600"></canvas>
-  <br>
-  <button id="restartBtn" style="margin-top:16px;font-size:20px;padding:8px 24px;background:#d81b60;color:white;border:none;border-radius:8px;cursor:pointer;">Restart Now</button>
+  <div id="game-container">
+    <div id="menuScreen">
+      <h1 class="pretty-title">Ping Pong Simulator</h1>
+      <button id="instructionsBtn" type="button">Instructions</button>
+      <div id="instructionsModal" class="modal" style="display:none;">
+        <div class="modal-content">
+          <span class="close" id="closeInstructions">&times;</span>
+          <h2>How to Play</h2>
+          <ul>
+            <li>Choose a difficulty: Normal or Hard.</li>
+            <li>Click "Play Ping Pong" to start the game.</li>
+            <li>Move your paddle with your mouse or the left/right arrow keys.</li>
+            <li>Keep the ball in play by bouncing it off your paddle.</li>
+            <li>Try to score as many points as possible!</li>
+            <li>The game ends if the ball passes your paddle or the AI's paddle.</li>
+          </ul>
+        </div>
+      </div>
+      <div id="difficultySelect">
+        <label>Choose Difficulty:</label><br>
+        <button class="difficultyBtn" data-speed="normal">Normal</button>
+        <button class="difficultyBtn" data-speed="hard">Hard</button>
+      </div>
+      <button id="playPong" style="display:none;">Play Ping Pong</button>
+    </div>
+    <canvas id="gameCanvas" width="400" height="600" style="display:none;"></canvas>
+    <div id="pongGameOver" style="display:none;">Game Over!<br><button id="pongRestartBtn">Restart</button></div>
+  </div>
   <script src="game.js"></script>
 </body>
 </html>
